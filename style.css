@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --body-font: 'Book Antiqua', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: #008080;
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+.header_toggle {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer
+}
+.header_toggle:hover{
+    color:#000000;
+}
+
+.nav .image{
+    margin: 15px auto;
+    display: block;
+    /*width: 120px;
+    border: 6px;           /* white border */
+    width: 150px;
+    height: 150px;
+    background: #008080;
+    border: 5px solid #fff;
+    border-radius: 20px;
+    margin-top: -2px;
+  }
+
+.nav h5{
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.l-navbar .h2 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    font-family: "Book Antiqua", sans-serif;
+}		
+
+.l-navbar .profile h1 a, #l-navbar .profile h1 a:hover {
+    color: #000000;     /* Change the color of name */
+    text-decoration: none;
+}
+.header .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #fff;             /* Change the background of social symbols */
+    color: #000000;               /* same here too */
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    margin-top: -22px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+.header .social-links a:hover {
+    background: #000000;
+    color: #fff;
+    text-decoration: none;
+  }
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: #008080;
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed);
+    margin-top: 25px;
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+.nav_logo {
+    margin-bottom: 2rem
+}
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
+}
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
+}
+.nav_link {
+    position: relative;
+    color: #000;
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+.nav_link:hover {
+    color: var(--white-color)
+}
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: var(--white-color)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.height-100 {
+    height: 100vh
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px)
+    }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("img/i1.jpeg") top center;
+    background-size: cover;
+  }
+  #hero:before {
+    content: "";
+    /*background: rgba(246, 192, 248, 0.3);   /* this is background color of main photo */
+    position: absolute;   /* absoulte */
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  #hero .hero-container {
+    position: absoulte; /* relative */
+    z-index: 2;
+    min-width: 300px;
+  }
+  #hero h2 {
+    margin: 0 0 10px 0;
+    font-size: 64px;
+    font-weight: 100;
+    line-height: 56px;
+    color: #008080;        /* change the color of the my name */
+    text-transform: letter-spacing;
+    font-family: "Book Antiqua";
+    margin-bottom: 12px; 
+    /*margin-top: -280px; */
+    margin-left: -462px;
+  }
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  } 
+
+ #body .wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #000;
+  }
+
+.wrapper{
+    display: inline-flex;
+}
+
+.wrapper .static-txt{
+    color: #008080;
+    font-size: 30px;
+    font-weight: 400;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    /*background: #000; */
+    overflow: hidden; 
+}
+.dynamic-txts li{
+    color: #008080;
+    list-style: none;
+    font-size: 60px;        /* 60px*/
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    /* left: 250px;
+     margin-left: -350px;*/
+    animation: slide 6s steps(4) infinite;
+  }
+  @keyframes slide{
+    100%{
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span{
+    position: relative;
+}
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 3px solid #000;
+    animation: typing 1.5s steps(10) infinite;
+}
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+} 
+
+/*--------------------------------------------------------------
+# About Me
+--------------------------------------------------------------*/
+.about h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #008080;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: -140px;
+    margin-bottom: 50px;
+    font-family: "Book Antiqua";
+  }
+  .about .content ul {
+    list-style: none;
+    padding: 0;
+    font-size: 22px;
+    text-align: left;
+  }
+  .about .content ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .about .content ul strong {
+    margin-right: 10px;
+  }
+  .about .content ul i {
+    font-size: 20px;            /* this size is of symbols in front of info */
+    margin-right: 5px;
+    color: #008080;
+    line-height: 0;
+  }
+  .about .content p:last-child {
+    margin-bottom: 0;
+  }
+  .about .content .count-box {
+    width: 100%;
+  }
+  
+  .about .content .count-box a {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    color: #5d6a75;
+    font-size: 15px;
+    font-family: "Book Antiqua", serif;
+    transition: ease-in-out 0.3s;
+  }
+  .about .content .count-box a:hover {
+    color: #82909c;
+  }
+  .about .image {
+    background: url("img/me3.jpeg") center center no-repeat;
+    border: 5px sloid rgb(0, 0, 0);
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 100px;
+    border: 10px solid rgb(54, 1, 1);
+  }
+  .about h2{
+    font-size: 30px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 80px;
+    color: #000000;
+    font-family: "Book Antiqua";
+  }
+  .about p{
+      font-size: 18px;
+      margin-left: 120px;
+      font-family: "Book Antiqua";
+  }
+
+  .main-btn {
+    display: inline-block;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+    padding: 10px 27px;
+    background-color: #008080;
+    border: 2px solid #000;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin-left: 400px;
+    margin-bottom: 20px;
+}
+
+.main-btn:hover {
+    background-color: red;
+    border-color: #000;
+    color: #000;
+}
+
+ 
+  /* Achievement Section */
+
+.achievements h1{
+    font-size: 35px;
+    color: #008080;
+    font-family: "Book Antiqua", serif;
+    text-align: center;
+    margin-top: -150px;
+  }
+  
+  .achievements h2{
+    font-size: 25px;
+    color: #000000;
+    font-family: "Book Antiqua", serif;
+    text-align-last: left;
+  }
+  
+  .achievements .content ul {
+    list-style: none;
+    padding-top: 15px;
+    font-size: 22px;
+    text-align: left;
+  }
+  .achievements .content ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .achievements .content ul i {
+    font-size: 20px;            /* this size is of symbols in front of info */
+    margin-right: 5px;
+    color: #008080;
+    line-height: 0;
+  }
+
+  .container{
+    margin-top: 15%;
+  }
+  
+  .img-text{
+    width: 100%;
+    height: 300px;
+    display: block;
+    text-align: center;
+    padding: 40% 5%;
+    background: #262626;
+    color: #fff;
+    border-radius: 15px;
+  }
+  .img-text h2{
+    font-size: 23px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .img-text p{
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  .single-box{
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .img-area{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #fff;
+    overflow: hidden;
+    top:  15px;
+    left: 12px;
+    border-radius: 50%;
+  }
+  .img-area img{
+    width: 100%;
+  }
+  .carousel-indicators{
+    left: 0;
+    top: auto;
+    bottom: -70px;
+  }
+  .carousel-indicators li{
+    background: #000;
+    border-radius: 50%;
+    width:  15px;
+    height: 15px;
+  }
+  .carousel-indicators .active{
+    background: #008080;
+  }
+  
+
+/* Project Section */
+
+.projects h1{
+  font-size: 35px;
+  color: #008080;
+  font-family: "Book Antiqua", serif;
+  text-align: center;
+  margin-top: -150px;
+  margin-bottom: 80px;
+}
+.projects h5{
+  font-size: 30px;
+  background-color: #008080;
+  font-family: "Book Antiqua";
+}
+
+.projects p{
+  font-size: 15px;
+  color: #000;
+  background-color: #fff;
+  font-family: "Book Antiqua";
+}
